@@ -24,14 +24,13 @@ public class N1149 {
         for(int i=2;i<=N;i++) {
             for (int j = 0; j < 3; j++) {
                 if(j==0){
-                    d[i][j] = Math.min(d[i][j], d[i - 1][1] + arr[i][j]);
-                    d[i][j] = Math.min(d[i][j], d[i - 1][2] + arr[i][j]);
+                    d[i][j] = Math.min(d[i - 1][1] + arr[i][j], d[i - 1][2] + arr[i][j]);
                 }else if(j==1){
-                    d[i][j] = Math.min(d[i][j], d[i - 1][0] + arr[i][j]);
-                    d[i][j] = Math.min(d[i][j], d[i - 1][2] + arr[i][j]);
+                    d[i][j] = Math.min(d[i - 1][0] + arr[i][j], d[i - 1][2] + arr[i][j]);
+
                 }else{
-                    d[i][j] = Math.min(d[i][j], d[i - 1][0] + arr[i][j]);
-                    d[i][j] = Math.min(d[i][j], d[i - 1][1] + arr[i][j]);
+                    d[i][j] = Math.min(d[i - 1][0] + arr[i][j], d[i - 1][1] + arr[i][j]);
+
                 }
             }
         }
