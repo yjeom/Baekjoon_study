@@ -18,19 +18,11 @@ public class N1406 {
             StringTokenizer st=new StringTokenizer(br.readLine());
             String command= st.nextToken();
             if(command.equals("L")){
-                if(!left.empty()){
-                    char temp=left.pop();
-                    right.push(temp);
-                }
+                if(!left.empty()) right.push(left.pop());
             }else if(command.equals("D")){
-                if(!right.empty()){
-                    char temp=right.pop();
-                    left.push(temp);
-                }
+                if(!right.empty()) left.push(right.pop());
             }else if(command.equals("B")){
-                if(!left.empty()){
-                    left.pop();
-                }
+                if(!left.empty()) left.pop();
             }else if(command.equals("P")){
                 left.push(st.nextToken().charAt(0));
             }
